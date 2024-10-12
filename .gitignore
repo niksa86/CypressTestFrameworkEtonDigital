@@ -1,0 +1,15 @@
+# Cypress cache
+.cypress/
+
+# Cypress videos and screenshots 
+cypress/videos/
+cypress/screenshots/
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Operating system files
+.DS_Store
+Thumbs.db
