@@ -1,31 +1,18 @@
-/// <reference types = "cypress" />
-describe('Check main page displayed', () => {
+import { mainPage, MainPage } from "../../support/page_objects/mainPage"
+import { careersPage, CareersPage } from "../../support/page_objects/careersPage"
 
-  beforeEach('Test suite setup', ()=>{
-      cy.visit('/')
-      cy.get('[class=\"c-txt--hero  c-hero__title\"]')
-        .should('contain', 'Tech Solutions to scale')
-      cy.get('#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll').click()
-    })
-  
-  it('Check for Senior QA Role on careers page',()=>{
-    cy.contains('ul','Career')
-      .trigger('mouseover')
-      .click()
-      
+describe('Check Job position name on Careers page', () => {
+ 
+  it('Senior QA Role should be visible on careers page',()=>{
+    
+    //Step1. Open Careers Page
+    mainPage.openCareersPage()
 
-    //find and click on 'Open position' option
-    cy.contains('[href="https://www.holycode.com/careers/"]','Open positions')
-      .click({force: true})
-
-    //Check if the filter button 'QA' is displayed and click on it
-    cy.get('.c-tag position, #26')
-    .should('be.visible')
-    .click()
-   
-    //Senior QA Developer/QA Team Lead role is visible on the page
-    cy.contains('.c-careercard__†itle', 'Senior QA Developer/QA Team Lead')
-    .should('be.visible')
-   
+    //Step2. Click on QA filter button on Careers Page
+    careersPage.selectFilterOptionQA()
+    
+    //Expected result: Senior QA Developer/QA Team Lead should be visible on the page
+    careersPage.validateSeniorQaRole()
+    
   })
 })

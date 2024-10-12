@@ -1,13 +1,10 @@
-/// <reference types = "cypress" />
+import { mainPage, MainPage } from "../../support/page_objects/mainPage"
+
 describe('Check headline on main page', ()=>{
 
-    beforeEach('Test suite setup', ()=>{
-        cy.visit('/')
-        cy.get('#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll').click()
-      })
+    it('Headline "Tech Soultion to scale" should be displayed on the main page', ()=>{
 
-    it('Check if headline "Tech Soultion to scale" is displayed on the main page', ()=>{
-        cy.get('[class=\"c-txt--hero  c-hero__title\"]')
-          .should('contain', 'Tech Solutions to scale')
+        //Expected result: Headline 'Tect Solutions to scale' should be visible on the main page
+        mainPage.checkMainHeadline()
     })
 })
