@@ -11,8 +11,8 @@ describe('Check Job position name on Careers page', () => {
     //Step2. Click on QA filter button on Careers Page
     careersPage.selectFilterOptionQA()
     
-    //Expected result: Senior QA Developer/QA Team Lead should be visible on the page
-    careersPage.validateSeniorQaRole()
+    //Expected result: Eton Digital should be the team for Senior QA Position
+    careersPage.validateTeamForSeniorQaRole()
     
   })
 })

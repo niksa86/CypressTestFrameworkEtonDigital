@@ -16,7 +16,15 @@ export class CareersPage{
      }
 
      get seniorQARole(){
-         return cy.contains('.c-careercard__†itle', 'Senior QA Developer/QA Team Lead')
+
+      return cy.contains('[class="c-txt--h3  c-careercard__†itle"]','Senior QA Developer/QA Team Lead')
+      
+     }
+
+     get pageTeams(){
+
+       return cy.get('.c-txt--body-lg')
+
      }
 
      get jobRolesTitles(){
@@ -51,10 +59,20 @@ export class CareersPage{
     }
 
     //This function validates if Senior QA role is visible on the page
-    validateSeniorQaRole(){
-         this.seniorQARole
-               .invoke('text')
-               .should('contain', 'Senior QA Developer/QA Team Lead')  
+    validateTeamForSeniorQaRole(){
+        this.seniorQARole.should('be.visible') 
+        this.seniorQARole
+            .then(() => {
+               cy.get('.c-txt--body-lg') 
+                 .eq(9)                
+                 .find('span')  
+                 .filter(':visible')        
+                 .invoke('text')        
+                 .then((teamName) => {
+                   expect(teamName.trim()).to.equal('EtonDigital'); 
+                   cy.log('Team Name:', teamName.trim());
+                 });
+             });
     }
 
     //This function export element titles to txt file
