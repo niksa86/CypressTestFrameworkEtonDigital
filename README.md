@@ -93,7 +93,7 @@ I didn't have opportunity to work with Cypress and Java script until know. It wa
      - Easy cross brower testing. There is no need to parametirezed test execution for each browser seperately like in other tools (e.g Selenium Web driver, Robot Framework), Cypress does that automatically.
 
      Cons:
-     - During my work on this assignemnt I stump up on a known issue related to loading custom commands from command.js file. Cypress has a problem to load custom commands directly from this file, in some cases it does not recognized them. I try to implement work around by creating 'index.js' file. In this file in I specifed path from which custom command should be loaded and I put index.js file in project configuration as a support file for cypress execution. With this workaround custom commands still didn't load propely. At the end to avoid test flakiness I just put custom commands in appropriate page object class and call them in tests. More about this issue you can find on this link: https://github.com/cypress-io/cypress-documentation/issues/2565
+     - During my work on this assignemnt I found a known issue related to loading custom commands from command.js file. Cypress has a problem to load custom commands directly from this file, in some cases it does not recognized them. I try to implement work around by creating 'index.js' file. In this file in I specifed path from which custom command should be loaded and I put index.js file in project configuration as a support file for cypress execution. With this workaround custom commands still didn't load propely. At the end to avoid test flakiness I just put custom commands in appropriate page object class and call them in tests. More about this issue you can find on this link: https://github.com/cypress-io/cypress-documentation/issues/2565
 
      - Aslo, another issue is filtering of visible elements in the DOM after action on the page. Commands '.filter(':visible')' or '.filter.not(':hidden')' still will display element that are not visible on the page but there are present in the DOM.
 
@@ -102,7 +102,7 @@ I didn't have opportunity to work with Cypress and Java script until know. It wa
      It is suitable for short timeline projects because:
      - Learning curve is fast, there is planty of documentation and community support
      - It is good for covereing smoke test suites and regression test suite
-     - Oportunity costs for setup and writing test stays in the long run since value can be seen really fast in time cost reduction and making room for other types of testing to be included in testing process. 
+     - Oportunity costs for setup and writing test stays low in the long run since value can be seen really fast in time cost reduction and making room for other types of testing to be included in testing process. 
 
 6. Contact
    
