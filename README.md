@@ -75,13 +75,13 @@ Structure of the project:
  -  Also, I added .gitignore to clean the project on the remote repo from unnecessary data
 
  -  There are two options to run tests:
-        The first option is to run the test in 'headless' mode. Open the PowerShell Terminal in IDE and run 'npx cypress run' command to execute all tests. Test execution will be performed in browsers in headless mode(browsers will not be visible during test execution)
+        -The first option is to run the test in 'headless' mode. Open the PowerShell Terminal in IDE and run 'npx cypress run' command to execute all tests. Test execution will be performed in browsers in headless mode(browsers will not be visible during test execution).
 
-        The second option is to start Cypress UI for test execution and cross-browser testing. 
+        -The second option is to start Cypress UI for test execution and cross-browser testing. 
         Open PowerShell Terminal in IDE and run command 'npx cypress open' command to open Cypress GUI
-        Select E2E configuration when Cypress GUI is opened
-        Select the available browser and click on Start e2E test
-        From the main menu (left corner) select the Spec option
+        Select E2E configuration when Cypress GUI is opened.
+        Select the available browser and click on Start e2E test.
+        From the main menu (left corner) select the Spec option.
         On the right side list of available tests will be displayed. 
         Now, you can run all or separate tests on selected default browsers or multiple browsers. 
 
